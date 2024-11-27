@@ -38,6 +38,12 @@
             <button (click)="showLocation(residence)" class="btn btn-primary">Show Location</button>
             <span *ngIf="selectedResidence === residence">{{ residence.address }}</span>
           </div>
+          <div *ngFor="let residence of listResidences">
+            <h3>{{ residence.name }}</h3>
+            <p>{{ residence.address }}</p>
+            <button [routerLink]="['/apartments', residence.id]">View Apartments</button>
+          </div>
+          
 
           <!-- Bouton pour liker -->
           <button class="btn btn-danger mt-2" (click)="addFavoris(residence)">Like</button>
